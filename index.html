@@ -7,17 +7,23 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <!-- Landing Section: Visible on first load -->
+  <!-- Landing Section with Triangle Layout -->
   <section id="landing">
-    <nav>
-      <a href="#whoAmI">Who am I?</a>
-      <a href="#whatHaveIDone">What have I done?</a>
-      <a href="#whatDoIThink">What do I think?</a>
-    </nav>
-    <audio controls autoplay loop>
-      <source src="./assets/216.04.10.2022.mp3" type="audio/mpeg">
-      Your browser does not support the audio element.
-    </audio>
+    <div class="triangle-layout">
+      <!-- Top Button (centered at the top vertex) -->
+      <a class="btn top-btn" href="#whatHaveIDone">What have I done?</a>
+      <!-- Bottom Left Button (centered at the bottom left vertex) -->
+      <a class="btn bottom-left-btn" href="#whoAmI">Who am I?</a>
+      <!-- Bottom Right Button (centered at the bottom right vertex) -->
+      <a class="btn bottom-right-btn" href="#whatDoIThink">What do I think?</a>
+      <!-- Centered Audio Control -->
+      <div class="audio-control">
+        <audio controls autoplay loop>
+          <source src="./assets/216.04.10.2022.mp3" type="audio/mpeg">
+          Your browser does not support the audio element.
+        </audio>
+      </div>
+    </div>
   </section>
 
   <!-- "Who Am I?" Section -->
