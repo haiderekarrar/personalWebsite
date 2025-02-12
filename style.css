@@ -1,98 +1,99 @@
 /* RESET & BASIC STYLES */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  html {
-    scroll-behavior: smooth;
-  }
-  body {
-    font-family: sans-serif;
-    line-height: 1.6;
-  }
-  
-  /* LANDING SECTION STYLES */
-  #landing {
-    height: 100vh;  /* Full viewport height */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: #f0f0f0;  /* Optional background color */
-  }
-  
-  /* Triangle Layout Container */
-  .triangle-layout {
-    position: relative;
-    width: 400px;   /* Adjust the container size as needed */
-    height: 400px;
-  }
-  
-  /* Uniform Button Styles */
-  .btn {
-    position: absolute;
-    width: 180px;         /* Fixed width for uniformity */
-    height: 60px;         /* Fixed height for uniformity */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #fff;
-    border: 2px solid #333;
-    border-radius: 5px;
-    text-decoration: none;
-    color: #333;
-    font-size: 1.2em;
-    transition: background 0.3s, color 0.3s;
-  }
-  .btn:hover {
-    background: #333;
-    color: #fff;
-  }
-  
-  /* 
-     Position the buttons so that the center of each button 
-     aligns with the vertex of the triangle.
-  */
-  
-  /* Top vertex at (50%, 0) */
-  .top-btn {
-    left: 50%;
-    top: 0;
-    transform: translate(-50%, -50%);
-  }
-  
-  /* Bottom left vertex at (0, 100%) */
-  .bottom-left-btn {
-    left: 0;
-    top: 100%;
-    transform: translate(-50%, -50%);
-  }
-  
-  /* Bottom right vertex at (100%, 100%) */
-  .bottom-right-btn {
-    left: 100%;
-    top: 100%;
-    transform: translate(-50%, -50%);
-  }
-  
-  /* Center the Audio Control in the middle of the triangle */
-  .audio-control {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-  }
-  
-  /* CONTENT SECTION STYLES */
-  section.content {
-    padding: 50px 20px;
-  }
-  
-  /* FOOTER STYLES */
-  footer {
-    padding: 20px;
-    text-align: center;
-    font-size: 0.8em;
-    color: #777;
-  }
-  
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  font-family: sans-serif;
+  line-height: 1.6;
+}
+
+/* LANDING SECTION STYLES */
+#landing {
+  height: 100vh;  /* Full viewport height */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* Add your background image here */
+  background: url('./assets/background.jpg') no-repeat center center;
+  background-size: cover;
+}
+
+/* Triangle Layout Container */
+.triangle-layout {
+  position: relative;
+  width: 400px;   /* Adjust the container size as needed */
+  height: 400px;
+}
+
+/* Uniform Button Styles */
+.btn {
+  position: absolute;
+  width: 180px;         /* Fixed width for uniformity */
+  height: 60px;         /* Fixed height for uniformity */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+  border: 2px solid #333;
+  border-radius: 5px;
+  text-decoration: none;
+  color: #333;
+  font-size: 1.2em;
+  transition: background 0.3s, color 0.3s;
+}
+.btn:hover {
+  background: #333;
+  color: #fff;
+}
+
+/* 
+   Position the buttons so that the center of each button 
+   aligns with the vertex of the triangle.
+*/
+
+/* Top vertex at (50%, 0) */
+.top-btn {
+  left: 50%;
+  top: 0;
+  transform: translate(-50%, -50%);
+}
+
+/* Bottom left vertex at (0, 100%) */
+.bottom-left-btn {
+  left: 0;
+  top: 100%;
+  transform: translate(-50%, -50%);
+}
+
+/* Bottom right vertex at (100%, 100%) */
+.bottom-right-btn {
+  left: 100%;
+  top: 100%;
+  transform: translate(-50%, -50%);
+}
+
+/* Center the Audio Control in the middle of the triangle */
+.audio-control {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* CONTENT SECTION STYLES */
+section.content {
+  padding: 50px 20px;
+}
+
+/* FOOTER STYLES */
+footer {
+  padding: 20px;
+  text-align: center;
+  font-size: 0.8em;
+  color: #777;
+}
