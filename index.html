@@ -1,121 +1,174 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>HAIDER</title>
-  <link rel="stylesheet" href="style.css" />
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Haider Gilani</title>
+<meta name="description" content="Computer science graduate who enters operations from zero, learns them fast, maps them from first principles to find bottlenecks and separate real constraints from habit, then aligns incentives and exhausts every avenue.">
+<meta property="og:title" content="Haider Gilani">
+<meta property="og:description" content="Computer science graduate who enters operations from zero and maps them from first principles to separate real constraints from habit.">
+<meta property="og:url" content="https://haidergilani.com/">
+<meta property="og:type" content="profile">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%232F5D50'/%3E%3Ctext x='32' y='43' font-family='Lato,Arial,sans-serif' font-size='30' font-weight='900' fill='%23FBFBF9' text-anchor='middle'%3EHG%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #FBFBF9;
+    --ink: #17202B;
+    --muted: #5B6573;
+    --rule: #D9DDE2;
+    --pine: #2F5D50;
+    --pine-dark: #234539;
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: "Lato", "Carlito", "Helvetica Neue", Arial, sans-serif;
+    font-size: 18px;
+    line-height: 1.6;
+  }
+  main {
+    max-width: 44rem;
+    margin: 0 auto;
+    padding: clamp(3rem, 10vw, 7rem) 1.5rem 4rem;
+  }
+  h1 {
+    margin: 0;
+    font-weight: 900;
+    font-size: clamp(2.6rem, 8vw, 4.25rem);
+    line-height: 1;
+    letter-spacing: -0.02em;
+  }
+  .where {
+    margin: 0.75rem 0 0;
+    color: var(--muted);
+    font-size: 1rem;
+  }
+  .summary {
+    margin: 2rem 0 0;
+    font-size: 1.15rem;
+    line-height: 1.6;
+    max-width: 38em;
+  }
+  a {
+    color: var(--pine);
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0.2em;
+  }
+  a:hover { color: var(--pine-dark); text-decoration-thickness: 2px; }
+  a:focus-visible {
+    outline: 2px solid var(--pine);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+  .links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem 1.75rem;
+    margin: 1.75rem 0 0;
+    padding: 0;
+    list-style: none;
+    font-weight: 700;
+  }
+  .resume-link {
+    display: inline-block;
+    padding: 0.45rem 1rem;
+    border: 1.5px solid var(--pine);
+    border-radius: 6px;
+    text-decoration: none;
+  }
+  .resume-link:hover { background: var(--pine); color: var(--paper); }
+  .links li { display: flex; align-items: center; }
+
+  .places {
+    margin: 3.5rem 0 0;
+    padding: 0;
+    list-style: none;
+    border-top: 1px solid var(--rule);
+  }
+  .places li {
+    display: grid;
+    grid-template-columns: 11rem 1fr;
+    gap: 0.25rem 1.5rem;
+    padding: 1.4rem 0;
+    border-bottom: 1px solid var(--rule);
+  }
+  .coord {
+    color: var(--muted);
+    font-size: 0.85rem;
+    font-variant-numeric: tabular-nums;
+    padding-top: 0.2rem;
+    white-space: nowrap;
+  }
+  .place { margin: 0; font-weight: 700; font-size: 1.05rem; }
+  .result { margin: 0.2rem 0 0; color: var(--ink); }
+
+  .study { margin: 3rem 0 0; }
+  .study h2 { margin: 0; font-size: 1.05rem; font-weight: 700; }
+  .study p { margin: 0.35rem 0 0; }
+
+  footer {
+    margin-top: 4rem;
+    color: var(--muted);
+    font-size: 0.9rem;
+  }
+
+  @media (max-width: 34rem) {
+    body { font-size: 17px; }
+    .places li { grid-template-columns: 1fr; }
+    .coord { padding-top: 0; }
+  }
+</style>
 </head>
 <body>
-  <!-- Landing Section with Triangle Layout -->
-  <section id="landing">
-    <div class="triangle-layout">
-      <!-- Top Button (centered at the top vertex) -->
-      <a class="btn top-btn" href="#whatHaveIDone">What have I done?</a>
-      <!-- Bottom Left Button (centered at the bottom left vertex) -->
-      <a class="btn bottom-left-btn" href="#whoAmI">Who am I?</a>
-      <!-- Bottom Right Button (centered at the bottom right vertex) -->
-      <a class="btn bottom-right-btn" href="#whatDoIThink">What do I think?</a>
-      <!-- Centered Audio Control -->
-      <div class="audio-control">
-        <audio controls autoplay loop>
-          <source src="./assets/216.04.10.2022.mp3" type="audio/mpeg">
-          Your browser does not support the audio element.
-        </audio>
+<main>
+  <h1>Haider Gilani</h1>
+  <p class="where">New York, NY</p>
+
+  <p class="summary">Computer science graduate who enters operations from zero, learns them fast, maps them from first principles to find bottlenecks and separate real constraints from habit, then aligns incentives and exhausts every avenue.</p>
+
+  <ul class="links">
+    <li><a class="resume-link" href="/resume.pdf">Resume (PDF)</a></li>
+    <li><a href="https://www.linkedin.com/in/haidergilani">LinkedIn</a></li>
+    <li><a href="https://github.com/haiderekarrar">GitHub</a></li>
+    <li><a href="mailto:h@haidergilani.com">h@haidergilani.com</a></li>
+  </ul>
+
+  <ul class="places">
+    <li>
+      <span class="coord">45.09°N 93.36°W</span>
+      <div>
+        <p class="place">Brooklyn Park, Minnesota</p>
+        <p class="result">At 19, spent $1,105 on sale-critical prep to sell a distressed house $76K above every previous offer, managing it remotely from New York.</p>
       </div>
-    </div>
+    </li>
+    <li>
+      <span class="coord">25.20°N 55.27°E</span>
+      <div>
+        <p class="place">Dubai</p>
+        <p class="result">Sold $312K of property in 7 days vs. the 1–3 months every professional quoted.</p>
+      </div>
+    </li>
+    <li>
+      <span class="coord">31.52°N 74.36°E</span>
+      <div>
+        <p class="place">Lahore</p>
+        <p class="result">Directed 40–50 workers through the 60-day restoration of a century-old estate in 120°F heat.</p>
+      </div>
+    </li>
+  </ul>
+
+  <section class="study">
+    <h2><a href="https://github.com/haiderekarrar/thePlausibilityTrap">The Plausibility Trap</a></h2>
+    <p>An AI-agent evaluation study built from the Minnesota sale’s 586 emails, messages, and documents.</p>
   </section>
 
-  <!-- "Who Am I?" Section -->
-  <section id="whoAmI" class="content">
-    <h1>Haider Gilani</h1>
-    <img src="./assets/profile.jpg" height="200" alt="A picture of Haider wearing a white shirt"/>
-    <p>therealhaidergilani@gmail.com</p>
-    <p>Address: <bdo dir="rtl">کہ شاہیں بناتا نہیں آشیانہ </bdo></p>
-    <p>Computer Science at Fordham '26</p>
-    <a href="https://x.com/haiderdgilani">
-      <img src="./assets/X_logo.jpg" height="35" alt="X.com logo"/>
-    </a>
-    <a href="https://github.com/haiderekarrar">
-      <img src="./assets/github-mark/github-mark.png" height="35" alt="Github logo"/>
-    </a>
-    <a href="https://www.linkedin.com/in/haidergilani">
-      <img src="./assets/LinkedIn_logo.png" height="35" alt="LinkedIn logo"/>
-    </a>
-  </section>
-
-  <!-- "What Have I Done?" Section -->
-  <section id="whatHaveIDone" class="content">
-    <h2>Projects</h2>
-    <ul>
-      <li>
-        <h3>The Spinning Donut</h3>
-        <h4>Highschool Project (11th grade)</h4>
-        <p>
-          Founded as a new student and managed virtually. Built a team of four people based on their concentrated interests. Kept the team motivated despite the time-consuming pressures of college applications and academics. Built by reasoning up from First Principles. Initiated my school’s first-ever participation in the National Space Society Space Settlement Contest.
-        </p>    
-        <object data="./assets/The Spinning Donut First Bite.pdf" type="application/pdf" width="800" height="600">
-          <p>Unable to show PDF. <a href="./assets/The Spinning Donut First Bite.pdf">Download it</a>?</p>
-        </object>
-      </li>
-      <li>
-        <h3>Frank the Robot</h3>
-        <p>Built in the 10th grade. Programmed in PICAXE BASIC.</p>
-        <img src="./assets/BuildingFrank.jpeg" alt="Pictures of Frank the Robot" height="500"/>
-      </li>
-    </ul>
-
-    <h2>Academics</h2>
-    <ul>
-      <li>
-        <h3>SAT - 1520</h3>
-        <p>Math - 790 <br />English - 730 <br />Taken in the August of 2021.</p>
-        <p>First attempt with one practice test. Suffered in the Reading portion due to time management.</p>
-      </li>
-      <li>
-        <h3>Hafiz</h3>
-        <p>I spent eleven months (from August 2019 to July 2020) memorizing the Quran. I completely dedicated all of my time to this and it is, as of yet, the most difficult thing I have ever done.</p>
-        <object data="./assets/WebsiteHifzEssay.pdf" type="application/pdf" width="800" height="600">
-          <p>Unable to open the PDF: <a href="./assets/WebsiteHifzEssay.pdf">download it instead</a>.</p>
-        </object>
-      </li>
-    </ul>
-  </section>
-
-  <!-- "What Do I Think?" Section -->
-  <section id="whatDoIThink" class="content">
-    <h2>Skills</h2>
-    <ul>
-      <li>C++, HTML, Javascript</li>
-      <li>
-        I successfully managed the sale of my parents' home over the phone, overcoming challenges including negotiating with an aggressive tenant (who had “trashed” the house and initially refused to leave), and handling a faulty furnace in a below-freezing winter. Basic renovations were done at less than one-tenth of estimated cost. Overall, saved hundreds of thousands of dollars.
-      </li>
-    </ul>
-
-    <h2>Languages</h2>
-    <ul>
-      <li>English and Urdu are my native languages. I can also semi-fluently speak Hindi and am able to understand Punjabi.</li>
-    </ul>
-
-    <h2>Hobbies</h2>
-    <ul>
-      <li>
-        I enjoy reading and weightlifting. I went on a two-month-long bulk each in 2022 and 2023, and was able to gain an almost unrealistic 62 pounds of muscle (from 129 to 191 pounds).
-      </li>
-      <li>
-        Fun fact about me: during my teenage years, I dedicated myself to becoming a professional mixed martial artist.
-      </li>
-    </ul>
-
-    <ul>
-      <li>I was born in Lahore, Pakistan in 2002.</li>
-      <li>I mostly grew up in Lahore, however, a significant portion of my childhood was also spent in (Chicago) Illinois, and Minnesota.</li>
-      <li>I currently live in New York City.</li>
-    </ul>
-  </section>
-
-  <footer>
-    <small>This website is a work in progress.</small>
-  </footer>
+  <footer>Fordham University, B.S. Computer Science, 2026</footer>
+</main>
 </body>
 </html>
