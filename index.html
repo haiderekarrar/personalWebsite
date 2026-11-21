@@ -89,74 +89,9 @@
   }
   .resume-link:hover { background: var(--pine); color: var(--paper); }
 
-  /* The check-in call: the one bold moment on the page */
-  .call {
-    margin: 1rem 0 0;
-    background: var(--card);
-    border: 1px solid var(--rule);
-    border-radius: 10px;
-    overflow: hidden;
-  }
-  .call-head {
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-    gap: 1rem;
-    padding: 0.8rem 1.25rem;
-    border-bottom: 1px solid var(--rule);
-    font-size: 0.9rem;
-    color: var(--muted);
-  }
-  .call-head strong { color: var(--ink); font-weight: 700; }
-  .live { color: var(--pine); font-weight: 700; white-space: nowrap; }
-  .live::before {
-    content: "";
-    display: inline-block;
-    width: 0.5rem; height: 0.5rem;
-    margin-right: 0.4rem;
-    border-radius: 50%;
-    background: var(--pine);
-    vertical-align: 0.08em;
-  }
-  .lines { margin: 0; padding: 1rem 1.25rem 1.1rem; list-style: none; }
-  .lines li { display: grid; grid-template-columns: 4.5rem 1fr; gap: 0.75rem; padding: 0.3rem 0; }
-  .who { color: var(--muted); font-size: 0.9rem; padding-top: 0.15rem; }
-  .who.agent { color: var(--pine); font-weight: 700; }
-  .sheet-wrap { overflow-x: auto; border-top: 1px solid var(--rule); background: #F6F8F7; }
-  table.sheet {
-    width: 100%;
-    min-width: 40rem;
-    border-collapse: collapse;
-    font-size: 0.88rem;
-    line-height: 1.4;
-  }
-  .sheet caption {
-    caption-side: top;
-    text-align: left;
-    padding: 0.7rem 1.25rem 0.4rem;
-    color: var(--muted);
-    font-size: 0.85rem;
-  }
-  .sheet th, .sheet td { text-align: left; padding: 0.5rem 0.6rem; border-top: 1px solid var(--rule); vertical-align: top; }
-  .sheet th:first-child, .sheet td:first-child { padding-left: 1.25rem; }
-  .sheet th { font-weight: 700; color: var(--muted); background: transparent; }
-  .sheet tr.new td { background: var(--pine-wash); }
-
-  @media (prefers-reduced-motion: no-preference) {
-    .lines li, .sheet tr.new td { opacity: 0; animation: appear 0.45s ease-out forwards; }
-    .lines li:nth-child(1) { animation-delay: 0.3s; }
-    .lines li:nth-child(2) { animation-delay: 1.1s; }
-    .lines li:nth-child(3) { animation-delay: 1.9s; }
-    .lines li:nth-child(4) { animation-delay: 2.7s; }
-    .sheet tr.new td { animation-delay: 3.5s; }
-    @keyframes appear { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: none; } }
-  }
-
-  .call-foot { margin: 0.8rem 0 0; font-size: 0.95rem; color: var(--muted); }
-
   .video {
     position: relative;
-    margin: 1rem 0 0;
+    margin: 1.1rem 0 0;
     aspect-ratio: 16 / 9;
     border-radius: 10px;
     overflow: hidden;
@@ -210,15 +145,6 @@
     .places li { grid-template-columns: 1fr; }
     .coord span { display: inline; }
     .coord span + span::before { content: " "; }
-    .lines li { grid-template-columns: 1fr; gap: 0; }
-    .call-head { flex-direction: column; gap: 0.1rem; }
-    table.sheet { min-width: 0; }
-    .sheet thead { display: none; }
-    .sheet tr.new td { display: grid; grid-template-columns: 7rem 1fr; gap: 0.5rem; border-top: 0; padding: 0.3rem 1.25rem; }
-    .sheet tr.new td:first-child { padding-top: 0.7rem; }
-    .sheet tr.new td:last-child { padding-bottom: 0.8rem; }
-    .sheet tr.new td::before { content: attr(data-label); color: var(--muted); font-weight: 700; }
-    .sheet tbody tr { border-top: 1px solid var(--rule); }
   }
 </style>
 </head>
@@ -240,22 +166,6 @@
     <h3><a href="https://youtu.be/znGuICb0Khc">Voice AI Check-in Agent</a></h3>
     <p>Nobody wants to type a weekly update on their feet. But almost anyone can talk for one minute. This voice agent calls each person on a team, asks what they’re working on, how busy they are, and what’s holding them up. Then it logs their answers to the manager’s Google Sheet and suggests what the manager should do next.</p>
     <p>I built it for deployment teams, the people who get a company’s software working for each new customer. But it works anywhere a manager needs updates from people out in the field, like service technicians, home health aides, and sales reps on the road.</p>
-    <figure class="call" aria-label="A check-in call from the demo and the spreadsheet row it produced">
-      <div class="call-head"><span><strong>Check-in call</strong>, from the demo</span><span class="live">1 min call</span></div>
-      <ol class="lines">
-        <li><span class="who agent">Agent</span><span>How much of your capacity is booked over the next two weeks?</span></li>
-        <li><span class="who">Haider</span><span>Maybe about 70% over the next two weeks.</span></li>
-        <li><span class="who agent">Agent</span><span>Is anything blocking you?</span></li>
-        <li><span class="who">Haider</span><span>The hospital’s IT team hasn’t given us access to their scheduling system. If my manager could get on a call with their IT lead, it would unblock it.</span></li>
-      </ol>
-      <div class="sheet-wrap">
-        <table class="sheet">
-          <caption>Deployment Check-ins sheet, filled in by the agent</caption>
-          <thead><tr><th>Name</th><th>Capacity %</th><th>Capacity (their words)</th><th>Blockers</th><th>Available for new project</th><th>Suggested action</th></tr></thead>
-          <tbody><tr class="new"><td data-label="Name">Haider Gilani</td><td data-label="Capacity %">70</td><td data-label="Their words">maybe about 70% over the next two weeks</td><td data-label="Blockers">Their IT team has not given access to the hospital’s scheduling system; if their manager could get on a call with the IT lead, it would unblock it.</td><td data-label="Available">no</td><td data-label="Suggested action">Follow up on blocker</td></tr></tbody>
-        </table>
-      </div>
-    </figure>
     <div class="video">
       <iframe src="https://www.youtube-nocookie.com/embed/znGuICb0Khc" title="Voice AI Check-in Agent demo" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
     </div>
