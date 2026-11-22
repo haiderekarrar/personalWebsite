@@ -107,9 +107,18 @@
     line-height: 1.2;
   }
   .study { margin: 1.4rem 0 0; }
-  .study h3 { margin: 0; font-size: 1.1rem; font-weight: 700; }
-  .study p { margin: 0.3rem 0 0; }
+  .study { padding-top: 1.3rem; border-top: 1px solid var(--rule); }
+  .study h3 {
+    margin: 0;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+  .study p { margin: 0.3rem 0 0; color: var(--muted); }
   .study p + p { margin-top: 0.7rem; }
+  .study .headline { margin: 0.25rem 0 0; color: var(--ink); }
+  .study .headline + p { margin-top: 0.55rem; }
 
   .places { margin: 1rem 0 0; padding: 0; list-style: none; }
   .places li {
@@ -180,11 +189,13 @@
   <h2>What I've built</h2>
   <section class="study">
     <h3><a href="https://github.com/mabdulrehman08/GeneSleuth">GeneSleuth</a></h3>
+    <p class="headline">Hunts for the cause a blood test can miss.</p>
     <p>When a child has epilepsy and genetic testing finds nothing, the cause can be a variant that only breaks a gene in the brain, which a blood test can miss. At Google DeepMind’s Gemini 4 hackathon in NYC, I built an AI agent that hunts for that cause, using DeepMind’s AlphaGenome to predict which rare variant breaks a gene in the brain.</p>
     <p>I tested it on 20 cases where I knew the answer, and fixed a flaw that would have let the AI guess the answer instead of working it out.</p>
   </section>
   <section class="study">
     <h3><a href="https://youtu.be/znGuICb0Khc">Voice AI Check-in Agent</a></h3>
+    <p class="headline">Team updates, without chasing anyone.</p>
     <p>Nobody wants to type a weekly update on their feet. But almost anyone can talk for one minute. This voice agent calls each person on a team, asks what they’re working on, how busy they are, and what’s holding them up. Then it logs their answers to the manager’s Google Sheet and suggests what the manager should do next.</p>
     <p>I built it for deployment teams, the people who get a company’s software working for each new customer. But it works anywhere a manager needs updates from people out in the field, like service technicians, home health aides, and sales reps on the road.</p>
     <div class="video">
@@ -193,7 +204,8 @@
   </section>
   <section class="study">
     <h3><a href="https://github.com/haiderekarrar/thePlausibilityTrap">The Plausibility Trap</a></h3>
-    <p>Could AI agents make the call I made in Minnesota? I gave them the same $220K cash offer I faced, without telling them how I responded, and fed them the 586 emails and messages I had at the time through a Python pipeline with redaction, validation, and 22 unit tests. Along the way, I caught a bug that was corrupting the text before scoring.</p>
+    <p class="headline">Could AI make the call I made?</p>
+    <p>I gave AI agents the same $220K cash offer I faced in Minnesota, without telling them how I responded, and fed them the 586 emails and messages I had at the time through a Python pipeline with redaction, validation, and 22 unit tests. Along the way, I caught a bug that was corrupting the text before scoring.</p>
   </section>
 
   <h2>What I've fixed</h2>
